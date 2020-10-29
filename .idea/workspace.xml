@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="" />
+    <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DataSet/shoes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +20,11 @@
     </option>
   </component>
   <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1jOgO6I25knGF6H9I8DxTltrOWB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,16 +38,17 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataSet" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GoSrc\Project2\Processing" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GoSrc\Project2\DataSet" />
       <recent name="D:\GoSrc\Project2" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GoSrc\Project2\Processing" />
       <recent name="D:\GoSrc\Project2" />
     </key>
   </component>
@@ -57,6 +67,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init and read file item csv(non process)" />
+    <option name="LAST_COMMIT_MESSAGE" value="init and read file item csv(non process)" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
@@ -65,26 +79,26 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="475" y="217" key="#Go_Modules/0.0.1366.768@0.0.1366.768" timestamp="1603720739094" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1603722328954">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1603988832309">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603722328954" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1603988679005">
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603988832309" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1603989030267">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603988679005" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1603988679005">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1603989030267">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1603988679005" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1603988679005">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1603989030267">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1603988679005" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1603988679005">
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1603989030267">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1603988679005" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
     <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1603987423084">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -105,6 +119,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1603720815603" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603989011544">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1603989011544" />
     <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1603987040522">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
