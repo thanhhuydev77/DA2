@@ -13,7 +13,7 @@ func main() {
 	InitAllController(r)
 	//allow all method CORS
 	handler := cors.AllowAll().Handler(r)
-	fmt.Print("server running at port 8001...")
+	fmt.Print("server running at port 8001...\n")
 	http.ListenAndServe(":8001", handler)
 
 }
