@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DataSet/shoes.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Processing/FilterEventSet.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Read/CSVReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVReader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +61,13 @@
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GoSrc\Project2\DataSet" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GoSrc\Project2\Processing\ContentBaseFiltering" />
+      <recent name="D:\GoSrc\Project2\Processing" />
       <recent name="D:\GoSrc\Project2" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GoSrc\Project2\Processing" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GoSrc\Project2\DataSet" />
       <recent name="D:\GoSrc\Project2" />
     </key>
   </component>
@@ -67,9 +86,21 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init and read file item csv(non process)" />
-    <option name="LAST_COMMIT_MESSAGE" value="init and read file item csv(non process)" />
+    <MESSAGE value="add dataset" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dataset" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -79,57 +110,68 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="475" y="217" key="#Go_Modules/0.0.1366.768@0.0.1366.768" timestamp="1603720739094" />
+    <state width="519" height="466" key="DebuggerActiveHint" timestamp="1604161939645">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="519" height="466" key="DebuggerActiveHint/0.0.1366.768@0.0.1366.768" timestamp="1604161939645" />
     <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1603988832309">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603988832309" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1603989030267">
+    <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1604163237740">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1603989030267">
+    <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
+    <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1604163237739">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1603989030267">
+    <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1604163237739" />
+    <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1604163237739">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1603989030267">
+    <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1604163237739" />
+    <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1604163237740">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1603989030267" />
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1603987423084">
+    <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1604163237740">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603987423084" />
-    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1603987423084">
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
+    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1604163237740">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1603987423084" />
-    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1603987423084">
+    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
+    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1604163237740">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1603987423084" />
-    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1603987423084">
+    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1604163237740">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1603987423084" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
     <state x="184" y="29" key="SettingsEditor" timestamp="1603720815603">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1603720815603" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603989011544">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603989537557">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1603989011544" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1603989537557" />
     <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1603987040522">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="691" height="392" key="XDebugger.FullValuePopup/0.0.1366.768@0.0.1366.768" timestamp="1603987040522" />
-    <state x="263" y="39" key="editAsTableFormatDialogDimension" timestamp="1603986686113">
+    <state x="263" y="39" key="editAsTableFormatDialogDimension" timestamp="1604114703582">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="263" y="39" key="editAsTableFormatDialogDimension/0.0.1366.768@0.0.1366.768" timestamp="1603986686113" />
+    <state x="263" y="39" key="editAsTableFormatDialogDimension/0.0.1366.768@0.0.1366.768" timestamp="1604114703582" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="*(*&quot;Project2/Model.Item&quot;)(824634015032)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
