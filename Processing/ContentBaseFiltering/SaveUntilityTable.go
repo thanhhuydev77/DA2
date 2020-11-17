@@ -12,7 +12,9 @@ import (
 	"strconv"
 	"strings"
 )
+var numberfilecomplete int
 func SaveAllUtilityTable(ItemListCategory []string) bool{
+	numberfilecomplete = 0
 	for _,category := range(ItemListCategory){
 
 		ListItemInCategory := []Model.ItemCategory{}
@@ -91,6 +93,7 @@ func SaveUntility1Table(itemlist []Model.ItemCategory,category string) bool {
 	csvwriter.WriteAll(utititytable)
 	csvwriter.Flush()
 	csvFile.Close()
+	numberfilecomplete +=1
 	return true
 }
 func calcDeltaPrice(currentprice1 float64,rawprice1 float64,currentprice2 float64,rawprice2 float64) float64{

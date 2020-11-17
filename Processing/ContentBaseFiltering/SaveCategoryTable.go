@@ -47,8 +47,8 @@ func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemprop
 		csvCategoryFile.Close()
 	}
 	fmt.Print("split file successfully\n")
-	splitOk = true
-	SaveAllUtilityTable(*itemCategories)
 
+	SaveAllUtilityTable(*itemCategories)
+	splitOk = true
 }
 

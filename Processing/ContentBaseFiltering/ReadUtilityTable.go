@@ -13,8 +13,8 @@ import (
 
 func ReadUtilityTable(itemid string,category string) []Model.ItemUtility{
 
-	ListItemInCategory := []Model.ItemUtility{}
-	ListUtility := []float64{}
+	var ListItemInCategory []Model.ItemUtility
+	var ListUtility []float64
 	var listItemId Model.ItemIdListResult
 	csvCategoryFile, err := os.OpenFile("Storage/"+category+"_Utility.csv", os.O_RDONLY, 0777)
 	if err != nil {
@@ -31,21 +31,21 @@ func ReadUtilityTable(itemid string,category string) []Model.ItemUtility{
 		}
 
 		if line[0] ==""{
-			for _,itemId := range(line){
+			for _,itemId := range line {
 				if itemId != "" {
 				listItemId.ItemIds = append(listItemId.ItemIds,itemId)
 				}
 			}
 		}else if line[0] == itemid {
-			for index,utility := range(line){
+			for index,utility := range line {
 				if index == 0 {
 					continue
 				}
 				fltUtility,_ := strconv.ParseFloat(utility,5)
 				ListUtility = append(ListUtility,fltUtility)
 				ListItemInCategory = append(ListItemInCategory,Model.ItemUtility{
-					listItemId.ItemIds[index-1],
-					ListUtility[index-1],
+					ItemId:       listItemId.ItemIds[index-1],
+					UtilityValue: ListUtility[index-1],
 				})
 			}
 		}

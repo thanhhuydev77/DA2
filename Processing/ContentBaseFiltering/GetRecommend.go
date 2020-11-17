@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"sort"
 	"strconv"
 )
 
@@ -19,7 +20,6 @@ func GetContentRecommend(w http.ResponseWriter, r *http.Request) {
 		io.WriteString(w, `{"message": "wrong format!"}`)
 		return
 	}
-
 	//if  splitOk == false {
 	//	io.WriteString(w, `{"message": "waiting for minutes, File is processing...!"}`)
 	//	return
@@ -28,7 +28,14 @@ func GetContentRecommend(w http.ResponseWriter, r *http.Request) {
 	// get item list
 	ItemList := ReadUtilityTable(strconv.Itoa(item.Id),item.Subcategory)
 	//get -- sort -- get 10 top record
-	
+	sort.SliceStable(ItemList, func(i, j int) bool {
+		return ItemList[i].UtilityValue > ItemList[j].UtilityValue
+	})
+	for i,value := range(ItemList){
+		if i < 10 {
+			result.ItemIds = append(result.ItemIds,value.ItemId)
+		}
+	}
 	//return list item id
 	jsonresult, _ := json.Marshal(result)
 	io.WriteString(w, string(jsonresult))

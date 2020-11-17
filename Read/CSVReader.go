@@ -17,6 +17,7 @@ var ItemList []Item
 var ItemListCategory []string
 var ItemProperties []string
 var reading bool
+
 func AddtoListCategory(newcategory string) {
 	for _, category := range ItemListCategory {
 		if category == newcategory {
@@ -25,6 +26,7 @@ func AddtoListCategory(newcategory string) {
 	}
 	ItemListCategory = append(ItemListCategory, newcategory)
 }
+
 func ReadFileitemPropertyCSV(path string) int {
 	reading = true
 	csvFile, _ := os.Open(path)
@@ -101,6 +103,7 @@ func ReadFileitemPropertyCSV(path string) int {
 }
 
 func ReadFileCSV(w http.ResponseWriter, r *http.Request) {
+
 	w.Header().Add("Content-Type", "application/json")
 	fileItemProperty, handlerItemProperty, err := r.FormFile("fileItemProperty")
 	if err != nil {
@@ -112,11 +115,11 @@ func ReadFileCSV(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer fileItemProperty.Close()
-
 	f, _ := os.OpenFile("./storage/"+handlerItemProperty.Filename, os.O_WRONLY|os.O_CREATE, 0666)
 	defer f.Close()
 	io.Copy(f, fileItemProperty)
 	leng := ReadFileitemPropertyCSV("./storage/" + handlerItemProperty.Filename)
 	io.WriteString(w, `{"message":"Upload File Item Property Successful with `+strconv.Itoa(leng)+` lines"}`)
 	go processing.SaveCategoryTable(ItemList, &ItemListCategory, &ItemProperties)
+
 }
