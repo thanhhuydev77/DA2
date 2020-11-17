@@ -8,9 +8,11 @@ import (
 	"strconv"
 	"strings"
 )
-
+var splitOk bool
 func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemproperties *[]string) {
-	*itemproperties = append(*itemproperties, "id", "current_price", "raw_price", "likes_count", "is_new", "codCountry")
+
+	splitOk = false
+	*itemproperties = append(*itemproperties, "id", "current_price", "raw_price", "likes_count", "is_new", "codCountry","brand")
 	//save to csv
 	for _, category := range *itemCategories {
 		//create file
@@ -40,9 +42,13 @@ func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemprop
 		itemIsNew := strconv.FormatBool(item.IsNew)
 		itemCodCountry := strings.Join(item.CodCountry, ",")
 
-		csvWriter2.Write([]string{itemId, itemCurrentPrice, itemRawPrice, itemLikeCount, itemIsNew, itemCodCountry})
+		csvWriter2.Write([]string{itemId, itemCurrentPrice, itemRawPrice, itemLikeCount, itemIsNew, itemCodCountry,item.Brand})
 		csvWriter2.Flush()
 		csvCategoryFile.Close()
 	}
 	fmt.Print("split file successfully\n")
+	splitOk = true
+	SaveAllUtilityTable(*itemCategories)
+
 }
+

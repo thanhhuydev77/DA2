@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/ReadUtilityTable.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveUntilityTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Processing/FilterEventSet.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Item.go" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Item.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Read/CSVReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVReader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +54,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -56,7 +63,7 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataSet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
@@ -96,11 +103,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init and read file item csv(non process)" />
     <MESSAGE value="add dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dataset" />
+    <MESSAGE value="split csv to categories file" />
+    <MESSAGE value="add git ignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add git ignore file" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -114,50 +124,54 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="519" height="466" key="DebuggerActiveHint/0.0.1366.768@0.0.1366.768" timestamp="1604161939645" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1603988832309">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1604219804086">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603988832309" />
-    <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1604163237740">
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1604219804086" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
-    <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1604163237739">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1604163237739" />
-    <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1604163237739">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1604163237739" />
-    <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1604163237740">
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1604163237740">
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
-    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1604163237740">
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
-    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1604163237740">
+    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
-    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1604163237740">
+    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1604376989878">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1604163237740" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state x="500" y="86" key="RollbackChangesDialog" timestamp="1604332395851">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="500" y="86" key="RollbackChangesDialog/0.0.1366.768@0.0.1366.768" timestamp="1604332395851" />
     <state x="184" y="29" key="SettingsEditor" timestamp="1603720815603">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1603720815603" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603989537557">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1604164578771">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1603989537557" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1604164578771" />
     <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1603987040522">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -166,6 +180,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="263" y="39" key="editAsTableFormatDialogDimension/0.0.1366.768@0.0.1366.768" timestamp="1604114703582" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1604373955558">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1604373955558" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

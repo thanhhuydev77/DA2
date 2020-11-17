@@ -16,7 +16,7 @@ import (
 var ItemList []Item
 var ItemListCategory []string
 var ItemProperties []string
-
+var reading bool
 func AddtoListCategory(newcategory string) {
 	for _, category := range ItemListCategory {
 		if category == newcategory {
@@ -26,7 +26,7 @@ func AddtoListCategory(newcategory string) {
 	ItemListCategory = append(ItemListCategory, newcategory)
 }
 func ReadFileitemPropertyCSV(path string) int {
-
+	reading = true
 	csvFile, _ := os.Open(path)
 	reader := csv.NewReader(bufio.NewReader(csvFile))
 	for {
@@ -96,6 +96,7 @@ func ReadFileitemPropertyCSV(path string) int {
 			Model: line[21],
 		})
 	}
+	reading = false
 	return len(ItemList)
 }
 
@@ -104,6 +105,10 @@ func ReadFileCSV(w http.ResponseWriter, r *http.Request) {
 	fileItemProperty, handlerItemProperty, err := r.FormFile("fileItemProperty")
 	if err != nil {
 		io.WriteString(w, `{"message":"Upload File Item Property Fail!"}`)
+		return
+	}
+	if reading {
+		io.WriteString(w, `{"message": "waiting for minutes, Server is reading table...!"}`)
 		return
 	}
 	defer fileItemProperty.Close()

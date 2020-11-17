@@ -4,3 +4,7 @@ github.com/rs/cors v1.7.0 h1:+88SsELBHx5r+hZ8TCkggzSstaWNbDvThkVK8H6f9ik=
 github.com/rs/cors v1.7.0/go.mod h1:gFx+x8UowdsKA9AchylcLynDq+nNFfI8FkUZdN/jGCU=
 github.com/thanhhuydev77/DA2 v0.0.0-20201029162936-4b6e2f35a7d6 h1:5F3QUEjzdzw+6+JeQ78m3b1GciCxchQp3n1BTot6rwg=
 github.com/thanhhuydev77/DA2 v0.0.0-20201029162936-4b6e2f35a7d6/go.mod h1:GH6DanSIg/ywtaTUuDNY5JnLI/GxVyq8esaS3QuRa3M=
+github.com/wilcosheh/tfidf v0.0.0-20170517095906-2847b6a5524e h1:Yq6K2NHO31+ImN1deqaOo2U4gMarmjIJ80ULQOsM64k=
+github.com/wilcosheh/tfidf v0.0.0-20170517095906-2847b6a5524e/go.mod h1:BDtD9ZfqP8PcWFAmISOdGe2G3zXtsuG3HnigSC1ZSaM=
+github.com/yanyiwu/gojieba v1.1.2 h1:BMwKCwg3G+Nw/Ctqzm/gNgN/6Ljf0Y4f7ddKlzTA+TM=
+github.com/yanyiwu/gojieba v1.1.2/go.mod h1:54wkP7sMJ6bklf7yPl6F+JG71dzVUU1WigZbR47nGdY=
