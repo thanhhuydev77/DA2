@@ -12,10 +12,14 @@ import (
 	"strconv"
 	"strings"
 )
+
 var numberfilecomplete int
-func SaveAllUtilityTable(ItemListCategory []string) bool{
+var categorylen int
+
+func SaveAllUtilityTable(ItemListCategory []string) bool {
 	numberfilecomplete = 0
-	for _,category := range(ItemListCategory){
+	categorylen = len(ItemListCategory)
+	for _, category := range ItemListCategory {
 
 		ListItemInCategory := []Model.ItemCategory{}
 		csvCategoryFile, err := os.OpenFile("Storage/"+category+".csv", os.O_RDONLY, 0777)
@@ -37,28 +41,28 @@ func SaveAllUtilityTable(ItemListCategory []string) bool{
 				headerline = false
 				continue
 			}
-			id,_ := strconv.Atoi(line[0])
-			tempcurrentPrice,_ := strconv.ParseFloat(line[1], 2)
-			temprawPrice,_ := strconv.ParseFloat(line[2], 2)
-			templikesCount,_ := strconv.Atoi(line[3])
+			id, _ := strconv.Atoi(line[0])
+			tempcurrentPrice, _ := strconv.ParseFloat(line[1], 2)
+			temprawPrice, _ := strconv.ParseFloat(line[2], 2)
+			templikesCount, _ := strconv.Atoi(line[3])
 			isNew := line[4] == "TRUE"
 			codCountry := strings.Split(line[5], ",")
 			itemcategory := Model.ItemCategory{
-				Id: id,
+				Id:           id,
 				CurrentPrice: tempcurrentPrice,
-				RawPrice: temprawPrice,
-				LikesCount: templikesCount,
-				IsNew: isNew,
-				CodCountry: codCountry,
-				Brand: line[6],
+				RawPrice:     temprawPrice,
+				LikesCount:   templikesCount,
+				IsNew:        isNew,
+				CodCountry:   codCountry,
+				Brand:        line[6],
 			}
-			ListItemInCategory = append(ListItemInCategory,itemcategory)
-	}
-		go SaveUntility1Table(ListItemInCategory,category)
+			ListItemInCategory = append(ListItemInCategory, itemcategory)
+		}
+		go SaveUntility1Table(ListItemInCategory, category)
 	}
 	return true
 }
-func SaveUntility1Table(itemlist []Model.ItemCategory,category string) bool {
+func SaveUntility1Table(itemlist []Model.ItemCategory, category string) bool {
 
 	csvFile, err := os.Create("Storage/" + category + "_Utility.csv")
 	if err != nil {
@@ -66,25 +70,25 @@ func SaveUntility1Table(itemlist []Model.ItemCategory,category string) bool {
 		return false
 	}
 	listItemheader := []string{}
-	listItemheader = append(listItemheader,"")
+	listItemheader = append(listItemheader, "")
 	utititytable := [][]string{}
-	for indexId,item1 := range(itemlist){
+	for indexId, item1 := range itemlist {
 		utitityRow := []string{}
-		utitityRow = append(utitityRow,strconv.Itoa(item1.Id))
-		listItemheader = append(listItemheader,strconv.Itoa(item1.Id))
+		utitityRow = append(utitityRow, strconv.Itoa(item1.Id))
+		listItemheader = append(listItemheader, strconv.Itoa(item1.Id))
 
-		for indexId2,item2 := range(itemlist){
+		for indexId2, item2 := range itemlist {
 			if indexId == indexId2 {
-				utitityRow = append(utitityRow,"")
-			}else{
-			utility := calcDeltaPrice(item1.CurrentPrice,item1.RawPrice,item2.CurrentPrice,item2.RawPrice)
-			utility += calcsimilarCodCountry(item1.CodCountry,item2.CodCountry)
-			utility += checkBrand(item1.Brand,item2.Brand)
+				utitityRow = append(utitityRow, "")
+			} else {
+				utility := calcDeltaPrice(item1.CurrentPrice, item1.RawPrice, item2.CurrentPrice, item2.RawPrice)
+				utility += calcsimilarCodCountry(item1.CodCountry, item2.CodCountry)
+				utility += checkBrand(item1.Brand, item2.Brand)
 
-			utitityRow = append(utitityRow,fmt.Sprintf("%f", utility))
+				utitityRow = append(utitityRow, fmt.Sprintf("%f", utility))
 			}
 		}
-		utititytable = append(utititytable,utitityRow)
+		utititytable = append(utititytable, utitityRow)
 	}
 	csvwriter := csv.NewWriter(csvFile)
 	//write header
@@ -93,26 +97,33 @@ func SaveUntility1Table(itemlist []Model.ItemCategory,category string) bool {
 	csvwriter.WriteAll(utititytable)
 	csvwriter.Flush()
 	csvFile.Close()
-	numberfilecomplete +=1
+
+	numberfilecomplete += 1
+	fmt.Print(" number file complete :" + strconv.Itoa(numberfilecomplete) + "\n")
+	if numberfilecomplete == categorylen {
+		fmt.Print("All done")
+	}
+
+	os.Remove("Storage/" + category + ".csv")
 	return true
 }
-func calcDeltaPrice(currentprice1 float64,rawprice1 float64,currentprice2 float64,rawprice2 float64) float64{
+func calcDeltaPrice(currentprice1 float64, rawprice1 float64, currentprice2 float64, rawprice2 float64) float64 {
 	deltaRawPrice := rawprice2 - rawprice1
 	deltaCurrentPrice := math.Abs(currentprice2 - currentprice1)
-	result := deltaRawPrice / math.Pow(math.E,deltaCurrentPrice)
+	result := deltaRawPrice / math.Pow(math.E, deltaCurrentPrice)
 	return result
 }
-func calcsimilarCodCountry(codCountry1 []string,codCountry2 []string) float64{
+func calcsimilarCodCountry(codCountry1 []string, codCountry2 []string) float64 {
 	if len(codCountry1) == 0 {
 		return float64(len(codCountry2))
 	}
-	if len(codCountry2 )== 0{
+	if len(codCountry2) == 0 {
 		return 0.0
 	}
 	var result float64
 	result = 0
-	for _,valuecountry1 := range(codCountry1) {
-		for _,valuecountry2 := range(codCountry2){
+	for _, valuecountry1 := range codCountry1 {
+		for _, valuecountry2 := range codCountry2 {
 			if valuecountry1 == valuecountry2 {
 				result += 1
 			}
@@ -120,8 +131,8 @@ func calcsimilarCodCountry(codCountry1 []string,codCountry2 []string) float64{
 	}
 	return result
 }
-func checkBrand(brand1 string,brand2 string) float64{
-	if brand1 == brand2 && brand1 != ""{
+func checkBrand(brand1 string, brand2 string) float64 {
+	if brand1 == brand2 && brand1 != "" {
 		return 5
 	}
 	if brand1 == "" && brand2 != "" {
