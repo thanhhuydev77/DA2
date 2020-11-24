@@ -8,11 +8,13 @@ import (
 	"strconv"
 	"strings"
 )
-var splitOk bool
-func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemproperties *[]string) {
 
-	splitOk = false
-	*itemproperties = append(*itemproperties, "id", "current_price", "raw_price", "likes_count", "is_new", "codCountry","brand")
+var SplitOk bool
+
+func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemProperties *[]string) {
+
+	SplitOk = false
+	*itemProperties = append(*itemProperties, "id", "current_price", "raw_price", "likes_count", "is_new", "codCountry", "brand")
 	//save to csv
 	for _, category := range *itemCategories {
 		//create file
@@ -21,11 +23,20 @@ func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemprop
 			fmt.Println(err)
 			return
 		}
-		csvwriter := csv.NewWriter(csvFile)
+		csvWriter := csv.NewWriter(csvFile)
 		//write header
-		csvwriter.Write(*itemproperties)
-		csvwriter.Flush()
-		csvFile.Close()
+		errWrite := csvWriter.Write(*itemProperties)
+		if errWrite != nil {
+			print(err)
+			return
+		}
+		csvWriter.Flush()
+		errClose := csvFile.Close()
+		if errClose != nil {
+			print(err)
+			return
+		}
+
 	}
 	// write content
 	for _, item := range itemList {
@@ -42,13 +53,21 @@ func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemprop
 		itemIsNew := strconv.FormatBool(item.IsNew)
 		itemCodCountry := strings.Join(item.CodCountry, ",")
 
-		csvWriter2.Write([]string{itemId, itemCurrentPrice, itemRawPrice, itemLikeCount, itemIsNew, itemCodCountry,item.Brand})
+		errWrite2 := csvWriter2.Write([]string{itemId, itemCurrentPrice, itemRawPrice, itemLikeCount, itemIsNew, itemCodCountry, item.Brand})
+		if errWrite2 != nil {
+			print(errWrite2)
+			return
+		}
 		csvWriter2.Flush()
-		csvCategoryFile.Close()
+		errClose := csvCategoryFile.Close()
+		if errClose != nil {
+			print(err)
+			return
+		}
 	}
 	fmt.Print("split file successfully\n")
-
+	itemList = nil
+	itemProperties = nil
 	SaveAllUtilityTable(*itemCategories)
-	splitOk = true
+	SplitOk = true
 }
-

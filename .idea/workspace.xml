@@ -21,12 +21,34 @@
   <component name="ChangeListManager">
     <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Item.go" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Item.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/ReadUtilityTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/ReadUtilityTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveUntilityTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveUntilityTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Read/CSVReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVReader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Chaussonsresult.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/ACCESSOIRES CHAUSSURES.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Baskets.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Bottes &amp; Bottines.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Bottes &amp; Chaussures montantes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Bottes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/CHAUSSURES HOMME.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Chaussons.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Chaussures de sport.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Chaussures de ville.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Claquettes &amp; Tongs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Derbies &amp; Mocassins.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Escarpins.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Flat &amp; Loafers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Mocassins.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Plate-formes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Plateforme.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Pumps.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Sandales &amp; Mules.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Sandales.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Sandals.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Slipper.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/Sneakers &amp; Baskets.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +139,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="475" y="217" key="#Go_Modules/0.0.1366.768@0.0.1366.768" timestamp="1603720739094" />
+    <state x="438" y="208" key="#Notifications" timestamp="1606229292879">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="438" y="208" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1606229292879" />
     <state width="519" height="466" key="DebuggerActiveHint" timestamp="1604161939645">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
