@@ -33,6 +33,7 @@ type ItemCategory struct {
 	IsNew        bool     `json:"isNew"`
 	CodCountry   []string `json:"codCountry"`
 	Brand        string   `json:"brand"`
+	Color        []string `json:"color"`
 }
 type ItemIdListResult struct {
 	ItemIds []string `json:"id"`
