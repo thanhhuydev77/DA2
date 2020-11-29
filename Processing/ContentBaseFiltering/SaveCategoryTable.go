@@ -81,24 +81,24 @@ func SaveCategoryTable(itemList []Model.Item, itemCategories *[]string, itemProp
 
 func saveMapItemAndCategory(itemList []Model.Item) {
 	os.Create("Storage/Mapping.csv")
+	csvFile, err := os.OpenFile("Storage/Mapping.csv", os.O_APPEND, 0777)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	csvWriter := csv.NewWriter(csvFile)
 	for _, item := range itemList {
-		csvFile, err := os.OpenFile("Storage/Mapping.csv", os.O_APPEND, 0777)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		csvWriter := csv.NewWriter(csvFile)
 		errWrite2 := csvWriter.Write([]string{item.Subcategory, strconv.Itoa(item.Id)})
 		if errWrite2 != nil {
 			print(errWrite2)
 			return
 		}
-		csvWriter.Flush()
-		errClose := csvFile.Close()
-		if errClose != nil {
-			print(err)
-			return
-		}
+	}
+	csvWriter.Flush()
+	errClose := csvFile.Close()
+	if errClose != nil {
+		print(err)
+		return
 	}
 }
 func FindCategory(Id int) string {
