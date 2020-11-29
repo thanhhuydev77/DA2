@@ -53,6 +53,10 @@ type ItemCategory struct {
 type ItemIdListResult struct {
 	ItemIds []string `json:"id"`
 }
+type ItemBasic struct {
+	ID   int
+	Name string
+}
 
 func RemoveDuplicateID(list []ItemUtility) []ItemUtility {
 	for i, value1 := range list {
