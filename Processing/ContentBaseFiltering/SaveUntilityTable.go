@@ -47,6 +47,7 @@ func SaveAllUtilityTable(ItemListCategory []string) bool {
 			templikesCount, _ := strconv.Atoi(line[3])
 			isNew := line[4] == "TRUE"
 			codCountry := strings.Split(line[5], ",")
+			color := strings.Split(line[6], ",")
 			itemcategory := Model.ItemCategory{
 				Id:           id,
 				CurrentPrice: tempcurrentPrice,
@@ -55,6 +56,7 @@ func SaveAllUtilityTable(ItemListCategory []string) bool {
 				IsNew:        isNew,
 				CodCountry:   codCountry,
 				Brand:        line[6],
+				Color:        color,
 			}
 			ListItemInCategory = append(ListItemInCategory, itemcategory)
 		}
@@ -84,7 +86,7 @@ func SaveUntility1Table(itemlist []Model.ItemCategory, category string) bool {
 				utility := calcDeltaPrice(item1.CurrentPrice, item1.RawPrice, item2.CurrentPrice, item2.RawPrice)
 				utility += calcsimilarCodCountry(item1.CodCountry, item2.CodCountry)
 				utility += checkBrand(item1.Brand, item2.Brand)
-
+				utility += calcColorSimilar(item1.Color, item2.Color)
 				utitityRow = append(utitityRow, fmt.Sprintf("%f", utility))
 			}
 		}
@@ -104,7 +106,7 @@ func SaveUntility1Table(itemlist []Model.ItemCategory, category string) bool {
 		fmt.Print("All done")
 	}
 
-	os.Remove("Storage/" + category + ".csv")
+	defer os.Remove("Storage/" + category + ".csv")
 	return true
 }
 func calcDeltaPrice(currentprice1 float64, rawprice1 float64, currentprice2 float64, rawprice2 float64) float64 {
@@ -139,4 +141,15 @@ func checkBrand(brand1 string, brand2 string) float64 {
 		return 2
 	}
 	return 0
+}
+func calcColorSimilar(color1 []string, color2 []string) float64 {
+	result := float64(0)
+	for _, value1 := range color1 {
+		for _, value2 := range color2 {
+			if value1 == value2 {
+				result += 1
+			}
+		}
+	}
+	return result
 }

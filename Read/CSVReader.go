@@ -28,6 +28,7 @@ func AddtoListCategory(newcategory string) {
 }
 
 func ReadFileitemPropertyCSV(path string) int {
+	ItemList = nil
 	reading += 1
 	csvFile, _ := os.Open(path)
 	reader := csv.NewReader(bufio.NewReader(csvFile))
@@ -75,19 +76,19 @@ func ReadFileitemPropertyCSV(path string) int {
 		go AddtoListCategory(line[1])
 		ItemList = append(ItemList, Item{
 			//Category:            line[0],
-			Subcategory:  line[1],
-			Name:         line[2],
-			CurrentPrice: currentPrice,
-			RawPrice:     rawPrice,
-			Currency:     line[5],
-			Discount:     discount,
-			LikesCount:   likesCount,
-			IsNew:        isNew,
-			Brand:        line[9],
-			BrandUrl:     line[10],
-			CodCountry:   codCountry,
-			//Variation0Color:     line[12],
-			//Variation1Color:     line[13],
+			Subcategory:     line[1],
+			Name:            line[2],
+			CurrentPrice:    currentPrice,
+			RawPrice:        rawPrice,
+			Currency:        line[5],
+			Discount:        discount,
+			LikesCount:      likesCount,
+			IsNew:           isNew,
+			Brand:           line[9],
+			BrandUrl:        line[10],
+			CodCountry:      codCountry,
+			Variation0Color: line[12],
+			Variation1Color: line[13],
 			//Variation0Thumbnail: line[14],
 			//Variation0Image:     line[15],
 			//Variation1Thumbnail: line[16],
@@ -120,7 +121,6 @@ func ReadFileCSV(w http.ResponseWriter, r *http.Request) {
 	io.Copy(f, fileItemProperty)
 	leng := ReadFileitemPropertyCSV("./storage/" + handlerItemProperty.Filename)
 	io.WriteString(w, `{"message":"Upload File Item Property Successful with `+strconv.Itoa(leng)+` lines"}`)
-	os.Remove("./storage/" + handlerItemProperty.Filename)
-	go processing.SaveCategoryTable(ItemList, &ItemListCategory, &ItemProperties)
 
+	go processing.SaveCategoryTable(ItemList, &ItemListCategory, &ItemProperties)
 }

@@ -27,6 +27,11 @@ func GetContentRecommend(w http.ResponseWriter, r *http.Request) {
 	//}
 
 	// get item list
+	item.Subcategory = FindCategory(item.Id)
+	if item.Subcategory == "" {
+		io.WriteString(w, `{"message":"item is not available!"}`)
+		return
+	}
 	ItemList := ReadUtilityTable(strconv.Itoa(item.Id), item.Subcategory)
 	//get -- sort -- get 10 top record
 	ItemList = Model.RemoveDuplicateID(ItemList)
