@@ -25,6 +25,21 @@ type Item struct {
 	IsNew               bool     `json:"isNew"`
 }
 
+type ItemOutput struct {
+	Name            string   `json:"name"`
+	CurrentPrice    float64  `json:"currentPrice"`
+	RawPrice        float64  `json:"rawPrice"`
+	Currency        string   `json:"currency"`
+	Discount        int      `json:"discount"`
+	LikesCount      int      `json:"likeCount"`
+	Brand           string   `json:"brand"`
+	CodCountry      []string `json:"codCountry"`
+	Variation0Color string   `json:"variation0Color"`
+	Variation1Color string   `json:"variation1Color"`
+	ImageUrl        string   `json:"imageUrl"`
+	Id              int      `json:"id"`
+}
+
 type ItemCategory struct {
 	Id           int      `json:"id"`
 	CurrentPrice float64  `json:"currentPrice"`
@@ -39,9 +54,6 @@ type ItemIdListResult struct {
 	ItemIds []string `json:"id"`
 }
 
-func RemoveID(slice []string, s int) []string {
-	return append(slice[:s], slice[s+1:]...)
-}
 func RemoveDuplicateID(list []ItemUtility) []ItemUtility {
 	for i, value1 := range list {
 		for j, value2 := range list {
