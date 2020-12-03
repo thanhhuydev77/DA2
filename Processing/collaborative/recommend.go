@@ -8,8 +8,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strconv"
-	//"strconv"
 )
 
 func RecommendUploadFile(w http.ResponseWriter, r *http.Request) {
@@ -28,34 +26,36 @@ func RecommendUploadFile(w http.ResponseWriter, r *http.Request) {
 
 	io.Copy(f, file)
 
-	length := Read.ReadFileProductReviewCSV("./storage/" + handler.Filename)
-	
-	for _, item := range length {
-		str := []string{}
-		str = append(str, item.Id)
-		str = append(str, item.Name)
-		str = append(str, item.ReviewUsername)
-		str = append(str, strconv.Itoa(item.Rating))
-			go writeCleanData(str, "./storage/Clean" + handler.Filename)
-	}
+	_, _, items := Read.ReadFileProductReviewCSV("./storage/" + handler.Filename)
 
-	io.WriteString(w, `{Filename: `+ handler.Filename + `}`)
+	data := [][]string{}
+	data = append(data, items)
+
+	// for _, user := range users {
+
+	// 	data = append(data, []string{
+	// 		user, 
+	// 	})
+	// }
+	fmt.Print(len(items))
+	go writeCleanData(data, "./storage/Clean"+handler.Filename)
+	io.WriteString(w, `{Filename: `+handler.Filename+`}`)
 }
 
-
-func writeCleanData(data []string, path string) {
-	csvData, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+func writeCleanData(data [][]string, path string) {
+	csvData, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, 0777)
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer csvData.Close()
+
 	csv := csv.NewWriter(csvData)
-	errWrite := csv.Write(data)
-	if errWrite != nil {
-		log.Fatal("Write file err")
-	}
-	csv.Flush()
-	errClose := csvData.Close()
-	if errClose != nil {
-		log.Fatal("close file error")
+	defer csv.Flush()
+
+	for _, value := range data {
+		errWrite := csv.Write(value)
+		if errWrite != nil {
+			log.Fatal("Write file err")
+		}
 	}
 }

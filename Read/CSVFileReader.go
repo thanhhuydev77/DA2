@@ -10,11 +10,13 @@ import (
 	"strconv"
 )
 
-func ReadFileProductReviewCSV(path string) []Model.ProductReview {
+func ReadFileProductReviewCSV(path string) ([]Model.ProductReview, []string, []string) {
 	csvFile, _ := os.Open(path)
 	reader := csv.NewReader(bufio.NewReader(csvFile))
 	var ProductReviewList []Model.ProductReview
-	reader.Read()
+
+	users := []string{}
+	items := []string{}
 	for {
 		line, err := reader.Read()
 		if err == io.EOF {
@@ -25,25 +27,36 @@ func ReadFileProductReviewCSV(path string) []Model.ProductReview {
 		}
 
 		rating, _ := strconv.Atoi(line[17])
+		ID := line[0]
+		Name:= line[9]
+		ReviewUsername:= line[23]
+		Rating:= rating
 		ProductReviewList = append(ProductReviewList, Model.ProductReview{
-			Id:             line[0],
-			Name:           line[9],
-			ReviewUsername: line[23],
-			Rating:         rating,
+			Id: ID,
+			Name: Name,
+			ReviewUsername: ReviewUsername,
+			Rating: Rating,
 		})
-		// file, err := os.OpenFile(path+"Clean.csv", os.O_CREATE, 0644)
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
-		// file.Close()
 
-		// for _, item := range ProductReviewList {
-		// 	go writeCleanData([]string{item.Id, item.Name, item.ReviewUsername, strconv.Itoa(item.Rating)}, path + "Clean.csv")
-		// }
+		_, userExist := findExist(users, ReviewUsername)
+		if !userExist {
+			users = append(users, ReviewUsername)
+		}
 
+		_, itemExist := findExist(items, ReviewUsername)
+		if !itemExist {
+			items = append(items, ID)
+		}
 	}
-	//return len(ProductReviewList)
-	return ProductReviewList[: 10]
+	return ProductReviewList[1:], users[1:], items[1:]
 }
 
 
+func findExist(list []string, item string) (int, bool)  {
+	for i, value := range list {
+		if (value == item){
+			return i, true
+		}
+	}
+	return -1, false
+}

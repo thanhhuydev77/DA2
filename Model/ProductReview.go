@@ -6,3 +6,7 @@ type ProductReview struct {
 	ReviewUsername  string `json: "reviews.username"`
 	Rating      	int	`json:"	reviews.rating"`
 }
+
+type ProductReviewUserBased struct {
+	
+}
