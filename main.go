@@ -26,5 +26,5 @@ func InitAllController(r *mux.Router) {
 	r.HandleFunc("/UploadFile", Read.ReadFileCSV).Methods("POST")
 	r.HandleFunc("/GetRecommendContent",processing.GetContentRecommend).Methods("GET")
 	r.HandleFunc("/RecommendUploadFile", collaborative.RecommendUploadFile).Methods("POST")
-	r.HandleFunc("/Recommended", collaborative.RecommendUploadFile).Methods("GET")
+	r.HandleFunc("/Recommended", collaborative.RecommendUserBased).Methods("GET")
 }

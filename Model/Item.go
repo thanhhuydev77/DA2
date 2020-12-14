@@ -57,3 +57,35 @@ type ItemUtility struct {
 	ItemId       string
 	UtilityValue float64
 }
+
+
+type ItemOutput struct {
+	Name            string   `json:"name"`
+	CurrentPrice    float64  `json:"currentPrice"`
+	RawPrice        float64  `json:"rawPrice"`
+	Currency        string   `json:"currency"`
+	Discount        int      `json:"discount"`
+	LikesCount      int      `json:"likeCount"`
+	Brand           string   `json:"brand"`
+	CodCountry      []string `json:"codCountry"`
+	Variation0Color string   `json:"variation0Color"`
+	Variation1Color string   `json:"variation1Color"`
+	ImageUrl        string   `json:"imageUrl"`
+	Id              int      `json:"id"`
+}
+
+type ItemBasic struct {
+	ID   int
+	Name string
+}
+
+// struct user rating item
+type ItemUserRating struct {
+	Item   string
+	Rating int
+}
+
+type UserItemRating struct {
+	User 	string
+	Rating	int
+}

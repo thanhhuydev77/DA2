@@ -2,10 +2,8 @@ package collaborative
 
 import (
 	"Project2/Read"
-	"encoding/csv"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 )
@@ -13,7 +11,6 @@ import (
 func RecommendUploadFile(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
 	file, handler, err := r.FormFile("myFile")
-
 	if err != nil {
 		fmt.Println("Error Retrieving the File")
 		fmt.Println(err)
@@ -21,41 +18,36 @@ func RecommendUploadFile(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
-	f, _ := os.OpenFile("./storage/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+	f, err1 := os.OpenFile("./Storage/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+	if err1 != nil {
+		fmt.Println("Error: ", err1.Error())
+	}
 	defer f.Close()
 
 	io.Copy(f, file)
 
-	_, _, items := Read.ReadFileProductReviewCSV("./storage/" + handler.Filename)
-
-	data := [][]string{}
-	data = append(data, items)
-
-	// for _, user := range users {
-
-	// 	data = append(data, []string{
-	// 		user, 
-	// 	})
-	// }
-	fmt.Print(len(items))
-	go writeCleanData(data, "./storage/Clean"+handler.Filename)
-	io.WriteString(w, `{Filename: `+handler.Filename+`}`)
+	itemRating, _ := Read.ReadFileProductReviewCSV("./Storage/" + handler.Filename)
+	//result :=
+	UserSimilarity(itemRating,  10, "./Storage/Clean" +handler.Filename)
+	//resultString := ""
+	//for key, element := range result {
+	//	resultString += "\n" + key + ": ["
+	//	for _, value := range element {
+	//		score := strconv.FormatFloat(value.score, 'f', 6, 64)
+	//		resultString += value.userId + ":" + score + ", "
+	//	}
+	//	resultString = resultString[:len(resultString)-2] + "],"
+	//}
+	io.WriteString(w, `{Filename: `+handler.Filename)
+	//io.WriteString(w, `{Filename: `+handler.Filename+ ",\n" +`result: [`+resultString+`]}`)
 }
 
-func writeCleanData(data [][]string, path string) {
-	csvData, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, 0777)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer csvData.Close()
+func RecommendUserBased(w http.ResponseWriter, r *http.Request)  {
+	w.Header().Add("Content-Type", "application/json")
+	filename := r.URL.Query().Get("filename")
+	userId := r.URL.Query().Get("userId")
 
-	csv := csv.NewWriter(csvData)
-	defer csv.Flush()
-
-	for _, value := range data {
-		errWrite := csv.Write(value)
-		if errWrite != nil {
-			log.Fatal("Write file err")
-		}
-	}
+	result := Read.RecommendUserBasedFunc(filename, userId)
+	io.WriteString(w, `{userId: `+  result +"}")
 }
+

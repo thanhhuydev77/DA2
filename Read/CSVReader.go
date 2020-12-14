@@ -5,6 +5,7 @@ import (
 	processing "Project2/Processing/ContentBaseFiltering"
 	"bufio"
 	"encoding/csv"
+	"encoding/json"
 	"io"
 	"log"
 	"net/http"
@@ -17,6 +18,7 @@ var ItemList []Item
 var ItemListCategory []string
 var ItemProperties []string
 var reading int
+var listIdBasic []ItemBasic
 
 func AddtoListCategory(newcategory string) {
 	for _, category := range ItemListCategory {
@@ -73,6 +75,7 @@ func ReadFileitemPropertyCSV(path string) int {
 		} else {
 			id = tempid
 		}
+		listIdBasic = append(listIdBasic, ItemBasic{ID: id, Name: line[2]})
 		go AddtoListCategory(line[1])
 		ItemList = append(ItemList, Item{
 			//Category:            line[0],
@@ -120,7 +123,8 @@ func ReadFileCSV(w http.ResponseWriter, r *http.Request) {
 	defer f.Close()
 	io.Copy(f, fileItemProperty)
 	leng := ReadFileitemPropertyCSV("./storage/" + handlerItemProperty.Filename)
-	io.WriteString(w, `{"message":"Upload File Item Property Successful with `+strconv.Itoa(leng)+` lines"}`)
+	listitemresult, _ := json.Marshal(listIdBasic)
+	io.WriteString(w, `{"message":"Upload File Item Property Successful with `+strconv.Itoa(leng)+` lines","Data":`+string(listitemresult)+`"}`)
 
 	go processing.SaveCategoryTable(ItemList, &ItemListCategory, &ItemProperties)
 }
