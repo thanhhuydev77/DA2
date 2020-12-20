@@ -20,35 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DataSet/ProductReview.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Processing/collaborative/CosineSimailrity.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UITemplate/getrecomend.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UITemplate/upload.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataSet/shoes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DataSet/shoes.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/Item.go" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Item.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/ReadUtilityTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/ReadUtilityTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveUntilityTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveUntilityTable.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Processing/collaborative/recommend.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/collaborative/recommend.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Read/CSVFileReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVFileReader.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Read/CSVReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVReader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/ACCESSOIRES CHAUSSURES.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Baskets.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Bottes &amp; Bottines.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Bottes &amp; Chaussures montantes.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Bottes.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/CHAUSSURES HOMME.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Chaussons.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Chaussures de sport.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Chaussures de ville.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Claquettes &amp; Tongs.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Derbies &amp; Mocassins.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Escarpins.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Flat &amp; Loafers.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Mocassins.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Plate-formes.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Plateforme.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Pumps.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Sandales &amp; Mules.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Sandales.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Sandals.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Slipper.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/Sneakers &amp; Baskets.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/CleanProductReviews.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/ProductReviews.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="C:\Go" />
+  <component name="GOROOT" url="file:///snap/go/6745" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -76,13 +63,21 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
