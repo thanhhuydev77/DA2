@@ -25,6 +25,39 @@ type Item struct {
 	IsNew               bool     `json:"isNew"`
 }
 
+type ItemCategory struct {
+	Id           int      `json:"id"`
+	CurrentPrice float64  `json:"currentPrice"`
+	RawPrice     float64  `json:"rawPrice"`
+	LikesCount   int      `json:"likeCount"`
+	IsNew        bool     `json:"isNew"`
+	CodCountry   []string `json:"codCountry"`
+	Brand        string   `json:"brand"`
+	Color        []string `json:"color"`
+}
+type ItemIdListResult struct {
+	ItemIds []string `json:"id"`
+}
+
+func RemoveID(slice []string, s int) []string {
+	return append(slice[:s], slice[s+1:]...)
+}
+func RemoveDuplicateID(list []ItemUtility) []ItemUtility {
+	for i, value1 := range list {
+		for j, value2 := range list {
+			if value1.ItemId == value2.ItemId && i != j {
+				list = append(list[:j], list[j+1:]...)
+			}
+		}
+	}
+	return list
+}
+
+type ItemUtility struct {
+	ItemId       string
+	UtilityValue float64
+}
+
 type ItemOutput struct {
 	Name            string   `json:"name"`
 	CurrentPrice    float64  `json:"currentPrice"`
@@ -40,36 +73,18 @@ type ItemOutput struct {
 	Id              int      `json:"id"`
 }
 
-type ItemCategory struct {
-	Id           int      `json:"id"`
-	CurrentPrice float64  `json:"currentPrice"`
-	RawPrice     float64  `json:"rawPrice"`
-	LikesCount   int      `json:"likeCount"`
-	IsNew        bool     `json:"isNew"`
-	CodCountry   []string `json:"codCountry"`
-	Brand        string   `json:"brand"`
-	Color        []string `json:"color"`
-}
-type ItemIdListResult struct {
-	ItemIds []string `json:"id"`
-}
 type ItemBasic struct {
 	ID   int
 	Name string
 }
 
-func RemoveDuplicateID(list []ItemUtility) []ItemUtility {
-	for i, value1 := range list {
-		for j, value2 := range list {
-			if value1.ItemId == value2.ItemId && i != j {
-				list = append(list[:j], list[j+1:]...)
-			}
-		}
-	}
-	return list
+// struct user rating item
+type ItemUserRating struct {
+	Item   string
+	Rating int
 }
 
-type ItemUtility struct {
-	ItemId       string
-	UtilityValue float64
+type UserItemRating struct {
+	User   string
+	Rating int
 }
