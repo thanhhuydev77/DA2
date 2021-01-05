@@ -57,7 +57,7 @@ func GetContentRecommend(w http.ResponseWriter, r *http.Request) {
 func GetItemInfo2(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
 
-	item := Model.Item{}
+	var item Model.ItemIdListResult
 	result := Model.ItemIdListResult{}
 
 	err := json.NewDecoder(r.Body).Decode(&item)
@@ -71,8 +71,9 @@ func GetItemInfo2(w http.ResponseWriter, r *http.Request) {
 	//}
 
 	// get item list
-
-	result.ItemIds = append(result.ItemIds, strconv.Itoa(item.Id))
+	for i := range item.ItemIds {
+		result.ItemIds = append(result.ItemIds, item.ItemIds[i])
+	}
 	//return list item id
 	jsonresult, _ := json.Marshal(GetItemInfo(result))
 	io.WriteString(w, string(jsonresult))
@@ -103,6 +104,7 @@ func GetItemInfo(listid Model.ItemIdListResult) []Model.ItemOutput {
 		}
 
 		if existedinList(line[20], listid) {
+			listid.ItemIds = Model.RemoveID(listid.ItemIds, Model.GetIndex(listid.ItemIds, line[20]))
 			var rawPrice float64
 			var discount int
 			var likesCount int
