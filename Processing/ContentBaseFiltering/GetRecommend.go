@@ -54,6 +54,29 @@ func GetContentRecommend(w http.ResponseWriter, r *http.Request) {
 	jsonresult, _ := json.Marshal(GetItemInfo(result))
 	io.WriteString(w, string(jsonresult))
 }
+func GetItemInfo2(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "application/json")
+
+	item := Model.Item{}
+	result := Model.ItemIdListResult{}
+
+	err := json.NewDecoder(r.Body).Decode(&item)
+	if err != nil {
+		io.WriteString(w, `{"message": "wrong format!"}`)
+		return
+	}
+	//if  splitOk == false {
+	//	io.WriteString(w, `{"message": "waiting for minutes, File is processing...!"}`)
+	//	return
+	//}
+
+	// get item list
+
+	result.ItemIds = append(result.ItemIds, strconv.Itoa(item.Id))
+	//return list item id
+	jsonresult, _ := json.Marshal(GetItemInfo(result))
+	io.WriteString(w, string(jsonresult))
+}
 func existedinList(id string, listid Model.ItemIdListResult) bool {
 	for _, value := range listid.ItemIds {
 		if id == value {
