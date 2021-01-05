@@ -124,7 +124,7 @@ func ReadFileCSV(w http.ResponseWriter, r *http.Request) {
 	io.Copy(f, fileItemProperty)
 	leng := ReadFileitemPropertyCSV("./storage/" + handlerItemProperty.Filename)
 	listitemresult, _ := json.Marshal(listIdBasic)
-	io.WriteString(w, `{"message":"Upload File Item Property Successful with `+strconv.Itoa(leng)+` lines","Data":`+string(listitemresult)+`"}`)
+	io.WriteString(w, `{"message":"Upload File Item Property Successful with `+strconv.Itoa(leng)+` lines","Data":`+string(listitemresult)+`}`)
 
 	go processing.SaveCategoryTable(ItemList, &ItemListCategory, &ItemProperties)
 }
