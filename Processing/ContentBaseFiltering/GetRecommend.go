@@ -79,7 +79,7 @@ func GetItemInfo(listid Model.ItemIdListResult) []Model.ItemOutput {
 			break
 		}
 
-		if !existedinList(line[20], listid) {
+		if existedinList(line[20], listid) {
 			var rawPrice float64
 			var discount int
 			var likesCount int

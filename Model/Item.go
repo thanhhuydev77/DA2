@@ -58,7 +58,6 @@ type ItemUtility struct {
 	UtilityValue float64
 }
 
-
 type ItemOutput struct {
 	Name            string   `json:"name"`
 	CurrentPrice    float64  `json:"currentPrice"`
@@ -86,6 +85,6 @@ type ItemUserRating struct {
 }
 
 type UserItemRating struct {
-	User 	string
-	Rating	int
+	User   string
+	Rating int
 }

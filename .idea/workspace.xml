@@ -20,22 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99da69c7-dbbf-456b-a152-303f208232be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DataSet/ProductReview.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Processing/collaborative/CosineSimailrity.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UITemplate/getrecomend.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UITemplate/upload.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataSet/shoes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DataSet/shoes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item.go" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Item.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/ContentBaseFiltering/SaveCategoryTable.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Processing/collaborative/recommend.go" beforeDir="false" afterPath="$PROJECT_DIR$/Processing/collaborative/recommend.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Read/CSVFileReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVFileReader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Read/CSVReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/Read/CSVReader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/CleanProductReviews.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/ProductReviews.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Storage/shoes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Storage/shoes.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +35,13 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file:///snap/go/6745" />
+  <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="TDuy" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jOgO6I25knGF6H9I8DxTltrOWB" />
@@ -63,21 +54,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
@@ -87,6 +70,8 @@
       <recent name="D:\GoSrc\Project2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GoSrc\Project2\DataSet" />
+      <recent name="D:\GoSrc\Project2\Storage" />
       <recent name="D:\GoSrc\Project2\Processing\ContentBaseFiltering" />
       <recent name="D:\GoSrc\Project2\Processing" />
       <recent name="D:\GoSrc\Project2" />
@@ -124,7 +109,14 @@
     <MESSAGE value="add dataset" />
     <MESSAGE value="split csv to categories file" />
     <MESSAGE value="add git ignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add git ignore file" />
+    <MESSAGE value="update content base" />
+    <MESSAGE value="update content base 2" />
+    <MESSAGE value="add file mapping,remove subcategory in param" />
+    <MESSAGE value="update productreview" />
+    <MESSAGE value="return listitem property" />
+    <MESSAGE value="add ui template" />
+    <MESSAGE value="upload file return list item(ID,Name)" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload file return list item(ID,Name)" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -138,6 +130,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="438" y="208" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1606229292879" />
+    <state x="283" y="84" width="800" height="600" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1607829230812">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="283" y="84" width="800" height="600" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1366.768@0.0.1366.768" timestamp="1607829230812" />
     <state width="519" height="466" key="DebuggerActiveHint" timestamp="1604161939645">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -146,38 +142,38 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1604219804086" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
-    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1604376989878">
+    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1606643254011">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1604376989878" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1606643254011" />
     <state x="500" y="86" key="RollbackChangesDialog" timestamp="1604332395851">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -186,10 +182,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1603720815603" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1604164578771">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1606664997661">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1604164578771" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1606664997661" />
     <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1603987040522">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -204,6 +200,15 @@
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1604373955558" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Processing/ContentBaseFiltering/GetRecommend.go</url>
+          <line>53</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="GoApplicationRunConfiguration">
         <watch expression="*(*&quot;Project2/Model.Item&quot;)(824634015032)" />
