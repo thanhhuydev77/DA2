@@ -48,5 +48,5 @@ func RecommendUserBased(w http.ResponseWriter, r *http.Request) {
 	userId := r.URL.Query().Get("userId")
 
 	result := Read.RecommendUserBasedFunc(filename, userId)
-	io.WriteString(w, result)
+	io.WriteString(w, `{userId: `+result+"}")
 }

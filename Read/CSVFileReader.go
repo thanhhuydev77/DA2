@@ -81,7 +81,7 @@ func RecommendUserBasedFunc(filename string, userId string) string {
 	lines := csv.NewReader(bufio.NewReader(csvFile))
 	lines.Comma = ','
 	lines.FieldsPerRecord = -1
-	result := "["
+	result := ""
 	for {
 		line, error := lines.Read()
 		if error == io.EOF {
@@ -95,7 +95,7 @@ func RecommendUserBasedFunc(filename string, userId string) string {
 			continue
 		} else {
 			length := len(line)
-			for i := 1; i < length; i++ {
+			for i := 0; i < length; i++ {
 				result += line[i] + ","
 			}
 		}
@@ -105,5 +105,5 @@ func RecommendUserBasedFunc(filename string, userId string) string {
 	if length > 1 {
 		length -= 1
 	}
-	return result[:length] + "]"
+	return result[:length]
 }
