@@ -14,12 +14,12 @@ type Similarity struct {
 	score  float64
 }
 
-func UserSimilarity(itemRating map[string][]Model.ItemUserRating, top int, filename string) {
+func UserSimilarity(itemRating map[string][]Model.ItemUserRating, top int, filename string) []string {
 	dataWrite := [][]string{}
-	amount := 5000
+	amount := 1000
 	users := GetUsersMap(itemRating)
 	length := len(users)
-
+	userIds := []string{}
 	for i := 0; i < length-1; i++ {
 		userSimilarity := []Similarity{}
 		score := 0.0
@@ -73,15 +73,21 @@ func UserSimilarity(itemRating map[string][]Model.ItemUserRating, top int, filen
 		}
 
 		data := []string{users[i]}
+
 		set := make(map[string]bool)
+		count := 0
 		for j := 0; j < sl; j++ {
 			list := itemRating[userSimilarity[j].userId]
 			for _, v := range list {
 				if set[v.Item] == false {
 					data = append(data, v.Item)
 					set[v.Item] = true
+					count += 1
 				}
 			}
+		}
+		if count > 2 {
+			userIds = append(userIds, users[i])
 		}
 
 		dataWrite = append(dataWrite, data)
@@ -93,6 +99,7 @@ func UserSimilarity(itemRating map[string][]Model.ItemUserRating, top int, filen
 	}
 
 	go writeCleanData(dataWrite, filename)
+	return userIds
 }
 
 func GetUsersMap(mymap map[string][]Model.ItemUserRating) []string {

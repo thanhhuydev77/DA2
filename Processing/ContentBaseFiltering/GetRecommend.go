@@ -104,7 +104,7 @@ func GetItemInfo(listid Model.ItemIdListResult) []Model.ItemOutput {
 		}
 
 		if existedinList(line[20], listid) {
-			listid.ItemIds = Model.RemoveID(listid.ItemIds, Model.GetIndex(listid.ItemIds, line[20]))
+			//listid.ItemIds = Model.RemoveID(listid.ItemIds, Model.GetIndex(listid.ItemIds, line[20]))
 			var rawPrice float64
 			var discount int
 			var likesCount int
