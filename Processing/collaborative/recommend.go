@@ -2,6 +2,7 @@ package collaborative
 
 import (
 	"Project2/Read"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -28,18 +29,9 @@ func RecommendUploadFile(w http.ResponseWriter, r *http.Request) {
 
 	itemRating, _ := Read.ReadFileProductReviewCSV("./Storage/" + handler.Filename)
 	//result :=
-	UserSimilarity(itemRating, 10, "./Storage/Clean"+handler.Filename)
-	//resultString := ""
-	//for key, element := range result {
-	//	resultString += "\n" + key + ": ["
-	//	for _, value := range element {
-	//		score := strconv.FormatFloat(value.score, 'f', 6, 64)
-	//		resultString += value.userId + ":" + score + ", "
-	//	}
-	//	resultString = resultString[:len(resultString)-2] + "],"
-	//}
-	io.WriteString(w, `{Filename: `+handler.Filename)
-	//io.WriteString(w, `{Filename: `+handler.Filename+ ",\n" +`result: [`+resultString+`]}`)
+	userIds := UserSimilarity(itemRating, 10, "./Storage/Clean"+handler.Filename)
+	jsonresult, _ := json.Marshal(userIds)
+	io.WriteString(w, `{"userIds": `+string(jsonresult)+"}")
 }
 
 func RecommendUserBased(w http.ResponseWriter, r *http.Request) {
@@ -48,5 +40,6 @@ func RecommendUserBased(w http.ResponseWriter, r *http.Request) {
 	userId := r.URL.Query().Get("userId")
 
 	result := Read.RecommendUserBasedFunc(filename, userId)
-	io.WriteString(w, `{userId: `+result+"}")
+	jsonresult, _ := json.Marshal(result)
+	io.WriteString(w, `{ "products" : `+string(jsonresult)+"}")
 }
